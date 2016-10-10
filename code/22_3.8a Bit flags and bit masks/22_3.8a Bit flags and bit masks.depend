@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1460955637 source:c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\22_3.8a bit flags and bit masks\main.cpp
+	<bitset>
+	<iostream>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1461135673 source:c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\48_6.6 ¡ª c-style strings\main.cpp
+	<iostream>
+	<cstring>
+

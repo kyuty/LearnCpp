@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1460597699 source:c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\06_1.9 header files\add.cpp
+
+1460599381 source:c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\06_1.9 header files\main.cpp
+	<iostream>
+	"add.h"
+
+1460599372 c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\06_1.9 header files\add.h
+

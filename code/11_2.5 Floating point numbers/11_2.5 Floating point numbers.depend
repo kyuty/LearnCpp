@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1460626264 source:c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\11_2.5 floating point numbers\main.cpp
+	<iostream>
+	<iomanip>
+

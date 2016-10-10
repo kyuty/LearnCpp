@@ -1,0 +1,61 @@
+#include <iostream>
+#include <iomanip> // for std::setprecision()
+#include <typeinfo> // for typeid()
+
+int main()
+{
+    // Numeric conversions === first
+    {
+        int i = 30000;  //0111 0101 0011 0000
+        char c = i;     //0011 0000
+
+        std::cout << static_cast<int>(c) << std::endl;
+    }
+    {
+        int i = 2;
+        short s = i; // convert from int to short
+        std::cout << s << "\n";
+
+        double d = 0.1234;
+        float f = d;
+        std::cout << f << "\n";
+    }
+    {
+        float f = 0.123456789; // double value 0.123456789 has 9 significant digits, but float can only support about 7
+        std::cout << std::setprecision(9) << f << "\n";
+    }
+    {
+        int i = 10;
+        float f = i;
+        std::cout << f << "\n";
+    }
+    {
+        int i = 3.5;
+        std::cout << i << "\n";
+    }
+    // Numeric conversions === end
+
+    // Evaluating arithmetic expressions === first
+    {
+        short a(4);
+        short b(5);
+        std::cout << typeid(a + b).name() << " " << a + b << std::endl; // show us the type of a + b
+    }
+    {
+        double d(4.0);
+        short s(2);
+        std::cout << typeid(d + s).name() << " " << d + s << std::endl; // show us the type of d + s
+    }
+    {
+        std::cout << 5u - 10 << "\n"; // 5u means treat 5 as an unsigned integer
+        /*
+        In this case, the signed integer (10) is promoted to an unsigned integer (which has higher priority),
+        and the expression is evaluated as an unsigned int.
+        Overflow results, and we get an answer we don¡¯t expect.
+
+        This is one of many good reasons to avoid unsigned integers in general.
+        */
+    }
+    // Evaluating arithmetic expressions === end
+    return 0;
+}

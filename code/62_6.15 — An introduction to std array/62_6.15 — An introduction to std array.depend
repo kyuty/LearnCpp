@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1461421422 source:c:\users\kyuty\desktop\learncpp_all\code\62_6.15 ¡ª an introduction to std array\main.cpp
+	<iostream>
+	<array>
+	<algorithm>
+

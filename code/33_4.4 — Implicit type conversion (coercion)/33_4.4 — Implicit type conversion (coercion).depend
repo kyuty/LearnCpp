@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1461031203 source:c:\users\kyuty\desktop\learncpp_all\learncpp_all\code\33_4.4 ¡ª implicit type conversion (coercion)\main.cpp
-	<iostream>
-	<iomanip>
-	<typeinfo>
-

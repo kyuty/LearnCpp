@@ -37,3 +37,8 @@ int main()
 
     return 0;
 }
+
+/*
+Enter an integer between 0 and 255: 200
+1100 1000
+*/

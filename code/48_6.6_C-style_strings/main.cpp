@@ -15,7 +15,7 @@ int main()
     {
         char mystring[] = "string";
         mystring[1] = 'p';
-        std::cout << mystring;
+        std::cout << mystring << "\n";
     }
     {
         char name[20] = "Alex"; // only use 5 characters (4 letters + null terminator)
@@ -74,6 +74,7 @@ int main()
                 spacesFound++;
         }
 
+        std::cout << "You typed " << strlen(buffer) << " numbers.\n";
         std::cout << "You typed " << spacesFound << " spaces!\n";
     }
     return 0;

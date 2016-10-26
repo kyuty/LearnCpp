@@ -8,6 +8,10 @@ int main()
     {
         double d = 5.0;
         std::cout << sizeof(d) << "\n"; // will print the size of variable d in bytes
+
+        /*
+            8
+        */
     }
     // Sizeof operator === end
 
@@ -23,6 +27,12 @@ int main()
 
         //int sum = add(x, y); // this comma is not the comma operator
         //int x(3), y(5); // this comma is not the comma operator either
+
+        /*
+            1
+            3
+            3
+        */
     }
     // Comma operator === end
 
@@ -33,6 +43,12 @@ int main()
         cout << "\n";
         int a = cout << (x > y) ? x : y;
         cout << "\n" << a;
+
+        /*
+            31
+            0
+            21
+        */
     }
     // conditional operators === end
 

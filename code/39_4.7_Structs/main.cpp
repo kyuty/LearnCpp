@@ -96,7 +96,7 @@ int main()
         Point3d zero = getZeroPoint();
 
         if (zero.x == 0.0 && zero.y == 0.0 && zero.z == 0.0)
-            std::cout << "The point is zero\n";
+            std::cout << "The point is zero\n";     // print
         else
             std::cout << "The point is not zero\n";
     }
@@ -121,7 +121,14 @@ int main()
 
     // Struct size and data structure alignment
     {
-        std::cout << "The size of Employee is " << sizeof(Employee) << "\n";
+        std::cout << sizeof(short) << " " << sizeof(int) << " " << sizeof(double) << std::endl;     // 2 + 4 + 8 = 14
+        std::cout << "The size of Employee is " << sizeof(Employee) << "\n";    // print 16
+
+        /*
+            It turns out, we can only say that the size of a struct will be at least as large as the size of all the variables it contains. 
+            But it could be larger! 
+            For performance reasons, the compiler will sometimes add gaps into structures (this is called padding).
+        */
     }
 
     return 0;

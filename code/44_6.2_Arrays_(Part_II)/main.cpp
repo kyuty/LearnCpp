@@ -56,11 +56,11 @@ int main()
         // the remaining elements are initialized to 0
         int array[5] = { 7, 4, 5 }; // only initialize first 3 elements
 
-        std::cout << array[0] << '\n';
-        std::cout << array[1] << '\n';
-        std::cout << array[2] << '\n';
-        std::cout << array[3] << '\n';
-        std::cout << array[4] << '\n';
+        std::cout << array[0] << '\n';      // print 7
+        std::cout << array[1] << '\n';      // print 4
+        std::cout << array[2] << '\n';      // print 5
+        std::cout << array[3] << '\n';      // print 0
+        std::cout << array[4] << '\n';      // print 0
     }
 
     {
@@ -135,13 +135,15 @@ int main()
     // Passing arrays to functions
     {
         int value = 1;
-        std::cout << "before passValue: " << value << "\n";
+        std::cout << "before passValue: " << value << "\n";     // print 1
         passValue(value);
-        std::cout << "after passValue: " << value << "\n";
+        std::cout << "after passValue: " << value << "\n";      // print 1
 
         int prime[5] = { 2, 3, 5, 7, 11 };
+        // print before passArray: 2 3 5 7 11
         std::cout << "before passArray: " << prime[0] << " " << prime[1] << " " << prime[2] << " " << prime[3] << " " << prime[4] << "\n";
         passArray(prime);
+        // print after passArray: 11 7 5 3 2
         std::cout << "after passArray: " << prime[0] << " " << prime[1] << " " << prime[2] << " " << prime[3] << " " << prime[4] << "\n";
     }
 
@@ -149,7 +151,8 @@ int main()
     {
         int array[] = { 1, 1, 2, 3, 5, 8, 13, 21 };
         std::cout << sizeof(array) << '\n'; // will print the size of the array
-        printSize(array);
+                                            // print 32
+        printSize(array);                   // print 8
     }
 
     // Indexing an array out of range

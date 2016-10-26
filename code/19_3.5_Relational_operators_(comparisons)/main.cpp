@@ -47,6 +47,15 @@ int main()
 
         std::cout << "d1 = " << d1 << "\n";
         std::cout << "d2 = " << d2 << "\n";
+
+        if (d1 == d2)
+            std::cout << "d1 == d2" << "\n";
+        else if (d1 > d2)
+            std::cout << "d1 > d2" << "\n";
+        else if (d1 < d2)
+            std::cout << "d1 < d2" << "\n";
+
+
         std::cout << std::setprecision(16); // show 16 digits (16精度,16个数字)
         std::cout << "d1 = " << d1 << "\n";
         std::cout << "d2 = " << d2 << "\n";
@@ -57,6 +66,15 @@ int main()
             std::cout << "d1 > d2" << "\n";
         else if (d1 < d2)
             std::cout << "d1 < d2" << "\n";
+
+        /*
+            d1 = 0.01
+            d2 = 0.01
+            d1 > d2
+            d1 = 0.01000000000000512
+            d2 = 0.009999999999999787
+            d1 > d2
+        */
 
     }
 
@@ -72,6 +90,12 @@ int main()
 
         // Second, let's compare a-1.0 (almost 0.0) to 0.0
         std::cout << approximatelyEqual(a-1.0, 0.0, 1e-8) << "\n";
+
+        /*
+            a = 0.9999999999999999
+            1
+            0
+        */
     }
 
     {
@@ -81,6 +105,12 @@ int main()
         std::cout << approximatelyEqual(a, 1.0, 1e-8) << "\n";     // compare "almost 1.0" to 1.0
         std::cout << approximatelyEqual(a-1.0, 0.0, 1e-8) << "\n"; // compare "almost 0.0" to 0.0
         std::cout << approximatelyEqualAbsRel(a-1.0, 0.0, 1e-12, 1e-8) << "\n"; // compare "almost 0.0" to 0.0
+
+        /*
+            1
+            0
+            1
+        */
     }
     return 0;
 }

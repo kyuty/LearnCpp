@@ -31,7 +31,7 @@ int main()
     {
         // global variables can be seen everywhere in program
         g_x = 5;
-        std::cout << g_y << "\n";
+        std::cout << g_y << "\n";   // print 2
     }
 
     {
@@ -39,18 +39,18 @@ int main()
         value++; // increments local value, not global value
         ::value--; // decrements global value, not local value
 
-        std::cout << "local value: " << value << "\n";
-        std::cout << "global value: " << ::value << "\n";
+        std::cout << "local value: " << value << "\n";      // print 8
+        std::cout << "global value: " << ::value << "\n";   // print 4
     }
 
     {
-        std::cout << g_x_1 << "\n";
+        std::cout << g_x_1 << "\n";     // print 1
         g_x_1 = 2;
-        std::cout << g_x_1 << "\n";
+        std::cout << g_x_1 << "\n";     // print 2
 
-        std::cout << g_y_1 << "\n";
+        std::cout << g_y_1 << "\n";     // print 9.8
         g_y_1 = 3;
-        std::cout << g_y_1 << "\n";
+        std::cout << g_y_1 << "\n";     // print 3
     }
 
     return 0;

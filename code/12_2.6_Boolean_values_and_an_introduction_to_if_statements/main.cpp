@@ -28,6 +28,13 @@ int main()
         bool b2(false);
         std::cout << b2 << std::endl;
         std::cout << !b2 << std::endl;
+
+        /*
+            1
+            0
+            0
+            1
+        */
     }
 
     {
@@ -36,6 +43,13 @@ int main()
         std::cout << std::boolalpha; // print bools as true or false
         std::cout << true << std::endl;
         std::cout << false << std::endl;
+
+        /*
+            1
+            0
+            true
+            false
+        */
     }
 
     {
@@ -52,7 +66,28 @@ int main()
             std::cout << x << " and " << y << " are equal" << std::endl;
         else
             std::cout << x << " and " << y << " are not equal" << std::endl;
+
+        /*
+            Enter an integer: 1
+            Enter another integer: 2
+            1 and 2 are not equal
+        */
     }
 
     return 0;
 }
+
+/*
+1
+0
+0
+1
+
+1
+0
+true
+false
+Enter an integer: 1
+Enter another integer: 2
+1 and 2 are not equal
+*/

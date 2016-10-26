@@ -18,11 +18,11 @@ void incrementAndPrint_1()
 
 int main()
 {
-    incrementAndPrint();
-    incrementAndPrint();
-    incrementAndPrint();
+    incrementAndPrint();    // print 2
+    incrementAndPrint();    // print 2
+    incrementAndPrint();    // print 2
 
-    incrementAndPrint_1();
-    incrementAndPrint_1();
-    incrementAndPrint_1();
+    incrementAndPrint_1();  // print 2
+    incrementAndPrint_1();  // print 3
+    incrementAndPrint_1();  // print 4
 }

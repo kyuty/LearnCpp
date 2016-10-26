@@ -6,29 +6,29 @@ int main()
     // The address-of operator (&)
     {
         int x = 5;
-        std::cout << x << '\n'; // print the value of variable x
-        std::cout << &x << '\n'; // print the memory address of variable x
+        std::cout << x << '\n';     // print the value of variable x
+        std::cout << &x << '\n';    // print the memory address of variable x
     }
 
     // The dereference operator (*)
     {
         int x = 5;
-        std::cout << x << '\n'; // print the value of variable x
-        std::cout << &x << '\n'; // print the memory address of variable x
-        std::cout << *&x << '\n'; /// print the value at the memory address of variable x
+        std::cout << x << '\n';     // print the value of variable x
+        std::cout << &x << '\n';    // print the memory address of variable x
+        std::cout << *&x << '\n';   // print the value at the memory address of variable x
     }
 
     // Declaring a pointer
     {
-        int *iPtr; // a pointer to an integer value
-        double *dPtr; // a pointer to a double value
+        int *iPtr;      // a pointer to an integer value
+        double *dPtr;   // a pointer to a double value
 
-        int* iPtr2; // also valid syntax (acceptable, but not favored)
-        int * iPtr3; // also valid syntax (but don't do this)
+        int* iPtr2;     // also valid syntax (acceptable, but not favored)
+        int * iPtr3;    // also valid syntax (but don't do this)
 
-        int *iPtr4, *iPtr5; // declare two pointers to integer variables
+        int *iPtr4, *iPtr5;     // declare two pointers to integer variables
 
-        int* iPtr6, iPtr7; // iPtr6 is a pointer to an int, but iPtr7 is just a plain int!
+        int* iPtr6, iPtr7;      // iPtr6 is a pointer to an int, but iPtr7 is just a plain int!
         iPtr7 = 3;
         iPtr6 = &iPtr7;
     }
@@ -36,10 +36,10 @@ int main()
     // Assigning a value to a pointer
     {
         int value = 5;
-        int *ptr = &value; // initialize ptr with address of variable value
+        int *ptr = &value;  // initialize ptr with address of variable value
 
-        std::cout << &value << '\n'; // print the address of variable value
-        std::cout << ptr << '\n'; // print the address that ptr is holding
+        std::cout << &value << '\n';    // print the address of variable value
+        std::cout << ptr << '\n';       // print the address that ptr is holding
     }
     {
         int iValue = 5;
@@ -57,7 +57,12 @@ int main()
     // The address-of operator returns a pointer
     {
         int x(4);
-        std::cout << typeid(&x).name() << "\n";
+        std::cout << typeid(&x).name() << "\n";     // print Pi
+
+        /*
+            On Visual Studio 2013, this printed: int *
+            With gcc, this prints “pi” (pointer to integer) instead
+        */
     }
 
     // Dereferencing pointers
@@ -75,7 +80,7 @@ int main()
         int *ptr = &value; // ptr points to value
 
         *ptr = 7; // *ptr is the same as value, which is assigned 7
-        std::cout << value; // prints 7
+        std::cout << value << "\n"; // prints 7
     }
 
     // The size of pointers
@@ -88,9 +93,9 @@ int main()
         };
         Something *somethingPtr; // Something is probably 12 bytes
 
-        std::cout << sizeof(chPtr) << '\n'; // prints 4
-        std::cout << sizeof(iPtr) << '\n'; // prints 4
-        std::cout << sizeof(somethingPtr) << '\n'; // prints 4
+        std::cout << sizeof(chPtr) << '\n';         // prints 8
+        std::cout << sizeof(iPtr) << '\n';          // prints 8
+        std::cout << sizeof(somethingPtr) << '\n';  // prints 8
     }
     return 0;
 }

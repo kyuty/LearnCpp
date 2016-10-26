@@ -32,6 +32,7 @@ int main()
 
     // Using symbolic constants throughout a program
     {
+        double radius = 1.0;
         double circumference = 2 * radius * constants::pi;
     }
 

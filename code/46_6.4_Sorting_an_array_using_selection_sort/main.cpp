@@ -7,9 +7,9 @@ int main()
     {
         int x = 2;
         int y = 4;
-        std::cout << "Before swap: x = " << x << ", y = " << y << '\n';
+        std::cout << "Before swap: x = " << x << ", y = " << y << '\n';     // print Before swap: x = 2, y = 4
         std::swap(x, y); // swap the values of x and y
-        std::cout << "After swap:  x = " << x << ", y = " << y << '\n';
+        std::cout << "After swap:  x = " << x << ", y = " << y << '\n';     // print After swap:  x = 4, y = 2
     }
 
     // Selection sort
@@ -37,6 +37,7 @@ int main()
         }
 
         // Now print our sorted array as proof it works
+        // print 10 20 30 40 50
         for (int index = 0; index < size; ++index)
             std::cout << array[index] << ' ';
 

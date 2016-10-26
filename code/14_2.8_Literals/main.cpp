@@ -17,11 +17,19 @@ int main()
     {
         int x = 012; // 0 before the number means this is octal
         std::cout << x << std::endl;
+
+        /*
+            10
+        */
     }
 
     {
         int x = 0xFF; // 0x before the number means this is hexadecimal
         std::cout << x << std::endl;
+
+        /*
+            255
+        */
     }
 
     {
@@ -56,3 +64,8 @@ int main()
 
     return 0;
 }
+
+/*
+10
+255
+*/ 

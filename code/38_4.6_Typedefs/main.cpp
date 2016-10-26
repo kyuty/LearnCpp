@@ -21,7 +21,7 @@ int main()
         distance = mhz;
     }
 
-    // Using typedefs for legibility
+    // Using typedefs for legibility(可读性)
     {
         int GradeTest();
 
@@ -44,7 +44,7 @@ int main()
 
     {
         int8_t i(97); // int8_t is actually a typedef for char
-        std::cout << i << "\n";
+        std::cout << i << "\n";     // print a
     }
 
     // Using typedefs to make complex types simple
@@ -60,7 +60,7 @@ int main()
     // Typedefs via the using keyword in C++11
     {
         typedef double distance_t; // define distance_t as an alias for type double
-        using distance_t_1 = double; // define distance_t as an alias for type double
+        using distance_1_t = double; // define distance_t as an alias for type double
     }
     return 0;
 }

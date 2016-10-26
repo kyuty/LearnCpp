@@ -6,7 +6,7 @@ int main()
         int i1 = 10;
         int i2 = 4;
         float f = i1 / i2;
-        std::cout << f << "\n";
+        std::cout << f << "\n";     // print 2
     }
     // Type casting === first
     {
@@ -15,13 +15,13 @@ int main()
             int i1 = 10;
             int i2 = 4;
             float f = (float)i1 / i2;
-            std::cout << f << "\n";
+            std::cout << f << "\n";     // print 2.5
         }
         {
             int i1 = 10;
             int i2 = 4;
             float f = float(i1) / i2;
-            std::cout << f << "\n";
+            std::cout << f << "\n";     // print 2.5
         }
         // C-style casts === end
 
@@ -34,7 +34,7 @@ int main()
             int i1 = 10;
             int i2 = 4;
             float f = static_cast<float>(i1) / i2;
-            std::cout << f << "\n";
+            std::cout << f << "\n";     // print 2.5
         }
         // static_cast === end
     }

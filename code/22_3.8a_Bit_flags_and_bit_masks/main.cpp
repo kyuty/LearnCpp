@@ -15,14 +15,20 @@ int main()
 {
     // An introduction to std::bitset === first
     {
-        std::bitset<8> bits(0x2); // we need 8 bits, start with bit pattern 0000 0010
-        bits.set(option_5); // set bit 4 to 1 (now we have 0001 0010)
-        bits.flip(option_6); // flip bit 5 (now we have 0011 0010)
-        bits.reset(option_6); // set bit 5 back to 0 (now we have 0001 0010)
+        std::bitset<8> bits(0x2);   // we need 8 bits, start with bit pattern 0000 0010
+        bits.set(option_5);         // set bit 4 to 1 (now we have 0001 0010)
+        bits.flip(option_6);        // flip bit 5 (now we have 0011 0010)
+        bits.reset(option_6);       // set bit 5 back to 0 (now we have 0001 0010)
 
         std::cout << "Bit 4 has value: " << bits.test(option_5) << '\n';
         std::cout << "Bit 5 has value: " << bits.test(option_6) << '\n';
         std::cout << "All the bits: " << bits << '\n';
+
+        /*
+            Bit 4 has value: 1
+            Bit 5 has value: 0
+            All the bits: 00010010
+        */
     }
     // An introduction to std::bitset === end
 
@@ -38,6 +44,11 @@ int main()
                         // 十进制的数字 与(&)操作 一个十六进制的数
 
         std::cout << "The 4 low bits have value: " << num<< '\n';
+
+        /*
+            Enter an integer: 17
+            The 4 low bits have value: 1
+        */
     }
     // Bit masks === end
 
@@ -58,11 +69,20 @@ int main()
         unsigned char blue = (pixel & blueBits) >> 8;
         unsigned char alpha = pixel & alphaBits;
 
-        std::cout << "Your color contains:\n";
+        std::cout << "\nYour color contains:\n";
         std::cout << static_cast<int>(red) << " of 255 red\n";
         std::cout << static_cast<int>(green) << " of 255 green\n";
         std::cout << static_cast<int>(blue) << " of 255 blue\n";
         std::cout << static_cast<int>(alpha) << " of 255 alpha\n";
+
+        /*
+            Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): FF7F3300
+            Your color contains:
+            255 of 255 red
+            127 of 255 green
+            51 of 255 blue
+            0 of 255 alpha
+        */
     }
     // An RGBA color example === end
 

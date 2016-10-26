@@ -20,11 +20,11 @@ int main()
         if (ptr)
             std::cout << "ptr is pointing to a double value.\n";
         else
-            std::cout << "ptr is a null pointer.\n";
+            std::cout << "ptr is a null pointer.\n";    // print
 
         double *ptr_1;
         if (ptr_1)
-            std::cout << "ptr_1 is pointing to a double value.\n";
+            std::cout << "ptr_1 is pointing to a double value.\n";  // print
         else
             std::cout << "ptr_1 is a null pointer.\n";
     }

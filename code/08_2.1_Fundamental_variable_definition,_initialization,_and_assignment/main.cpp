@@ -5,11 +5,11 @@ using namespace std;
 int main()
 {
     {
-        int nValue = 5; // explicit initialization
+        int nValue = 5; // explicit initialization.  copy initialization.
         cout << nValue << endl;
     }
     {
-        int nValue(5); // implicit initialization
+        int nValue(5); // implicit initialization    direct initialization.
         cout << nValue << endl;
     }
     {

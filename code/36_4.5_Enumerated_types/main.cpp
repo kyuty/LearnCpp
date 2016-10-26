@@ -19,8 +19,12 @@ std::string getItemName(ItemType itemType)
 }
 
 // print enum === fisrt
+// Declare a new enumeration named Color
 enum Color
 {
+    // Here are the enumerators
+    // These define all the possible values this type can hold
+    // Each enumerator is separated by a comma, not a semicolon
     COLOR_BLACK, // assigned 0
     COLOR_RED, // assigned 1
     COLOR_BLUE, // assigned 2
@@ -28,8 +32,8 @@ enum Color
     COLOR_WHITE, // assigned 4
     COLOR_CYAN, // assigned 5
     COLOR_YELLOW, // assigned 6
-    COLOR_MAGENTA // assigned 7
-};
+    COLOR_MAGENTA // assigned 7     // for maximum compatibility, the last enumerator should not have a comma
+};// however the enum itself must end with a semicolon
 
 void printColor(Color color)
 {
@@ -51,46 +55,22 @@ void printColor(Color color)
         std::cout << "Magenta";
     else
         std::cout << "Who knows!";
+
+    std::cout << std::endl;
 }
 // print enum === end
 
 int main()
 {
     {
-        // Declare a new enumeration named Color
-        enum Color
-        {
-            // Here are the enumerators
-            // These define all the possible values this type can hold
-            // Each enumerator is separated by a comma, not a semicolon
-            COLOR_BLACK,
-            COLOR_RED,
-            COLOR_BLUE,
-            COLOR_GREEN,
-            COLOR_WHITE,
-            COLOR_CYAN,
-            COLOR_YELLOW,
-            COLOR_MAGENTA // for maximum compatibility, the last enumerator should not have a comma
-        }; // however the enum itself must end with a semicolon
         // Define a few variables of enumerated type Color
         Color paint = COLOR_WHITE;
-        Color house(COLOR_BLUE);
-    }
+        std::cout << paint << std::endl;
+        printColor(paint);
 
-    {
-        enum Color
-        {
-            COLOR_BLACK, // assigned 0
-            COLOR_RED, // assigned 1
-            COLOR_BLUE, // assigned 2
-            COLOR_GREEN, // assigned 3
-            COLOR_WHITE, // assigned 4
-            COLOR_CYAN, // assigned 5
-            COLOR_YELLOW, // assigned 6
-            COLOR_MAGENTA // assigned 7
-        };
-        Color paint(COLOR_WHITE);
-        std::cout << paint << "\n";
+        Color house(COLOR_BLUE);
+        std::cout << house << std::endl;
+        printColor(house);
     }
 
     {
@@ -116,24 +96,15 @@ int main()
         //Color color = static_cast<Color>(5); // ugly
     }
     {
-        enum Color
-        {
-            COLOR_BLACK, // assigned 0
-            COLOR_RED, // assigned 1
-            COLOR_BLUE, // assigned 2
-            COLOR_GREEN, // assigned 3
-            COLOR_WHITE, // assigned 4
-            COLOR_CYAN, // assigned 5
-            COLOR_YELLOW, // assigned 6
-            COLOR_MAGENTA // assigned 7
-        };
         Color color;
         //std::cin >> color; // will cause compiler error
 
+        std::cout << "please input an integer:" << "\n";
         int inputColor;
         std::cin >> inputColor;
         std::cin.ignore(32767,'\n');
         color = static_cast<Color>(inputColor);
+        printColor(color);
     }
 
     {

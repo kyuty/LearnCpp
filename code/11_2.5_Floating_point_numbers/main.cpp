@@ -17,6 +17,14 @@ int main()
         cout << f << endl;
         f = 0.0000987654321f;   // e前面的数 依旧 只打印6位数
         cout << f << endl;
+
+        /*
+            9.87654
+            987.654
+            987654
+            9.87654e+06
+            9.87654e-05
+        */
     }
 
     {
@@ -25,12 +33,21 @@ int main()
         std::cout << f << std::endl;
         double d = 3.3333333333333333333333333333333333333;
         std::cout << d << std::endl;
+
+        /*
+            3.333333253860474
+            3.333333333333333
+        */
     }
 
     {
         float f(123456789.0f); // f has 9 significant digits
         std::cout << std::setprecision(9); // because we want to show all 9 significant digits in f
         std::cout << f << std::endl;
+
+        /*
+            123456792
+        */
     }
 
     // Rounding errors
@@ -39,6 +56,11 @@ int main()
         std::cout << d << std::endl; // use default cout precision of 6
         std::cout << std::setprecision(17);
         std::cout << d << std::endl;
+
+        /*
+            0.1
+            0.10000000000000001
+        */
     }
 
     {
@@ -49,6 +71,11 @@ int main()
 
         double d2(0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1); // should equal 1.0
         std::cout << d2 << std::endl;
+
+        /*
+            1
+            0.99999999999999989
+        */
 
     }
 
@@ -63,6 +90,12 @@ int main()
 
         double nan = zero / zero; // not a number (mathematically invalid)
         std::cout << nan << "\n";
+
+        /*
+            inf
+            -inf
+            -nan
+        */
     }
 
     return 0;
@@ -75,13 +108,18 @@ int main()
 987654
 9.87654e+06
 9.87654e-05
+
 3.333333253860474
 3.333333333333333
+
 123456792
+
 0.1
 0.10000000000000001
+
 1
 0.99999999999999989
+
 inf
 -inf
 -nan

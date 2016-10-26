@@ -11,8 +11,8 @@ int main()
         prime[3] = 7;
         prime[4] = 11;
 
-        std::cout << "The lowest prime number is: " << prime[0] << "\n";
-        std::cout << "The sum of the first 5 primes is: " << prime[0] + prime[1] + prime[2] + prime[3] + prime[4] << "\n";
+        std::cout << "The lowest prime number is: " << prime[0] << "\n";    // print 2
+        std::cout << "The sum of the first 5 primes is: " << prime[0] + prime[1] + prime[2] + prime[3] + prime[4] << "\n";  // print 28
     }
 
     // Array data types
@@ -22,7 +22,7 @@ int main()
         array[1] = 3.0;
         array[2] = 4.3;
 
-        std::cout << "The average is " << (array[0] + array[1] + array[2]) / 3 << "\n";
+        std::cout << "The average is " << (array[0] + array[1] + array[2]) / 3 << "\n";     // print 3.1
     }
 
     {
@@ -83,6 +83,8 @@ int main()
         int temp = 5;
         const int size_2 = temp;
         int array_4[size_2]; // Not ok -- size is a runtime constant, not a compile-time constant!
+
+        std::cout << "dsfdsaf";
     }
     return 0;
 }

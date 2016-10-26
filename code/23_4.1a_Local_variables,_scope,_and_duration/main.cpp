@@ -60,6 +60,11 @@ int main_4() // main's x is created here
     int x = 5;
     int y = 6;
     std::cout << add(x, y) << std::endl; // the value from main's x is copied into add's x
+
+    /*
+        11
+    */
+
     return 0;
 } // main's x is destroyed here
 // === 4 === end
@@ -78,6 +83,10 @@ int main_5()
 
     // y can not be used here because it was already destroyed!
 
+    /*
+        5 + 7 = 12
+    */
+
     return 0;
 } // x is destroyed here
 // === 5 === end
@@ -94,11 +103,12 @@ int main_6()
         // apples now refers to the nested block apples
         // the outer block apples is hidden
 
-        std::cout << apples << "\n";
+        std::cout << apples << "\n";    // print 10
+
     } // nested block apples destroyed
 
     // apples now refers to the outer block apples
-    std::cout << apples;
+    std::cout << apples;    // print 5
 
     return 0;
 } // outer block apples destroyed
@@ -111,7 +121,7 @@ int main_7()
     {
         // y is only used inside this block, so define it here
         int y(5);
-        std::cout << y;
+        std::cout << y;     // print 5
     }
     // otherwise y could still be used here
 
@@ -129,7 +139,7 @@ int max(int x, int y) // x and y defined here
 // === 8 === end
 
 // === 9 === first
-int main()
+int main_9()
 {
     std::cout << "Enter an integer: ";
     int smaller;
@@ -153,6 +163,25 @@ int main()
     std::cout << "The smaller value is: " << smaller << "\n";
     std::cout << "The larger value is: " << larger << "\n";
 
+    /*
+        Enter an integer: 13
+        Enter a larger integer: 12
+        Swapping the values
+        The smaller value is: 12
+        The larger value is: 13
+    */
+
     return 0;
 } // smaller and larger die here
 // === 9 === end
+
+int main() {
+    main_1();
+    main_2();
+    main_3();
+    main_4();
+    main_5();
+    main_6();
+    main_7();
+    main_9();
+}

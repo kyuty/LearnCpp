@@ -1,6 +1,6 @@
 main
 *.out
 *.o
-./*.out
-./*.o
+code/*.out
+code/*.o
 doc/

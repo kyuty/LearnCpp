@@ -41,6 +41,7 @@ int main()
         std::cout << "Your name is " << name << " and your age is " << age << "\n";
     }
 
+/*
     //Mixing std::cin and std::getline()
     {
         std::cout << "Pick 1 or 2: ";
@@ -54,6 +55,7 @@ int main()
 
         std::cout << "Hello, " << name << ", you picked " << choice << '\n';
     }
+*/
 
     // Appending strings
     {
@@ -71,6 +73,7 @@ int main()
         std::cout << myName << " has " << myName.length() << " characters\n";
     }
 
+/*
     // Write a program that asks the user to enter their full name and their age.
     // As output, tell the user how many years they¡¯ve lived for each letter in their name
     // (for simplicity, count spaces as a letter).
@@ -88,6 +91,7 @@ int main()
         double agePerLetter = static_cast<double>(age) / letters; // static cast age to double to avoid integer division
         std::cout << "You've lived " << agePerLetter << " years for each letter in your name.\n";
     }
+*/
 
     return 0;
 }

@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-    cout << BasicMath::add(4, 3) << endl;
-    cout << BasicMath::subtract(4, 3) << endl;
+    cout << BasicMath::add(4, 3) << endl;		// print 7
+    cout << BasicMath::subtract(4, 3) << endl;	// print 1
 
     return 0;
 }

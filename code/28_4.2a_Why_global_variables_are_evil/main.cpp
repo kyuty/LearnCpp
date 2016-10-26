@@ -22,7 +22,7 @@ int main()
     if (g_mode == 1)
         cout << "No threat detected." << endl;
     else
-        cout << "Launching nuclear missiles..." << endl;
+        cout << "Launching nuclear missiles..." << endl;    // print this
 
     return 0;
 }
@@ -52,6 +52,7 @@ For example, instead of:
 Do this:
     static double g_gravity (9.8); // restrict direct access to this file only
     double getGravity() // this function can be exported to other files to access the global outside of this file
+                        // 此函数可以导出到其他文件以访问此文件的全局外部
     {
         // We could add logic here if needed later
         return g_gravity;

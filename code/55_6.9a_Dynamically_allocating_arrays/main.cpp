@@ -34,10 +34,10 @@ int main()
 
         std::cout << "I just allocated an array of size " << size << '\n';
 
-        array[0] = 5; // set element 0 to value 5
+        array[0] = 5;   // set element 0 to value 5
 
         delete[] array; // use array delete to deallocate array
-        array = 0; // use nullptr instead of 0 in C++11
+        array = 0;      // use nullptr instead of 0 in C++11
     }
 
     // Initializing dynamically allocated arrays
@@ -56,9 +56,9 @@ int main()
         array[4] = 1;
     }
     {
-        int fixedArray[5] = { 9, 7, 5, 3, 1 }; // initialize a fixed array in C++03
-        int *array = new int[5] { 9, 7, 5, 3, 1 }; // initialize a dynamic array in C++11
-        int fixedArray_1[5] { 9, 7, 5, 3, 1 }; // initialize a fixed array in C++11
+        int fixedArray[5] = { 9, 7, 5, 3, 1 };      // initialize a fixed array in C++03
+        int *array = new int[5] { 9, 7, 5, 3, 1 };  // initialize a dynamic array in C++11
+        int fixedArray_1[5] { 9, 7, 5, 3, 1 };      // initialize a fixed array in C++11
     }
 
     /*

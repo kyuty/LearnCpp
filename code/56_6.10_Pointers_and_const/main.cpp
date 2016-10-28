@@ -5,7 +5,7 @@ const int* ptr = &value; --> 不管value是int类型还是const int类型, 都�
 int *const ptr = &value; --> ptr永远指向value的地址(
                                                     如果value是int类型,则可以通过 *ptr = ortherValue; 改变value的值.
                                                     如果value是const int类型,则不可以通过 *ptr = ortherValue; 改变value的值.
-                                                    )
+                                                )
 */
 
 int main()

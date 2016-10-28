@@ -25,6 +25,7 @@ int main()
         ptr = 0; // set ptr to be a null pointer (use nullptr instead of 0 in C++11)
     }
 
+
     // Dangling pointers
     {
         int *ptr = new int; // dynamically allocate an integer
@@ -32,8 +33,11 @@ int main()
 
         delete ptr; // return the memory to the operating system.  ptr is now a dangling pointer.
 
-        std::cout << *ptr << "\n"; // Dereferencing a dangling pointer will cause undefined behavior
-        delete ptr; // trying to deallocate the memory again will also lead to undefined behavior.
+        std::cout << *ptr << "\n";  // Dereferencing a dangling pointer will cause undefined behavior        
+                                    // print 0
+        //delete ptr;   // trying to deallocate the memory again will also lead to undefined behavior.        
+                        // *** Error in `./main': double free or corruption (fasttop): 0x0000000000bd0090 ***
+                        // Aborted (core dumped)
     }
     {
         int *ptr = new int; // dynamically allocate an integer
@@ -44,6 +48,7 @@ int main()
 
         // however, otherPtr is still a dangling pointer!
     }
+
 
     // Operator new can fail
     {
@@ -62,10 +67,15 @@ int main()
     {
         int *ptr;
         // If ptr isn't already allocated, allocate it
-        if (!ptr)
+        if (!ptr) {
+            std::cout << "(!ptr) == true\n";
             ptr = new int;
-        if (ptr)
-            delete ptr;
+        }
+        if (ptr) {
+            std::cout << "ptr == true\n";       // print it
+            //delete ptr;   //*** Error in `./main': munmap_chunk(): invalid pointer: 0x00007f4a1aa571f8 *** 
+                            //Aborted (core dumped)
+        }
     }
 
     // Memory leaks
@@ -78,5 +88,6 @@ int main()
         int *ptr = new int;
         ptr = new int; // old address lost, memory leak results
     }
+
     return 0;
 }

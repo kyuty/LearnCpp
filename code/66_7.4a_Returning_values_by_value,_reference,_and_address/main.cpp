@@ -50,7 +50,7 @@ int main()
         // Set the element of array with index 10 to the value 5
         getElement(array, 10) = 5;
 
-        std::cout << array[10] << '\n';
+        std::cout << array[10] << '\n';     // print 5
     }
 
     // Mixing return references and values

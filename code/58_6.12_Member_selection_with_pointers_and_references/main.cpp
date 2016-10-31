@@ -8,9 +8,9 @@ struct Person
 
 int main()
 {
+    Person person;
+    
     {
-        Person person;
-
         // Member selection using actual struct variable
         person.age = 5;
     }

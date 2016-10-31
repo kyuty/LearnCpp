@@ -16,19 +16,19 @@ int main()
 {
     // References
     {
-        int value = 5; // normal integer
-        int &ref = value; // reference to variable value
-        value = 6; // value is now 6
-        ref = 7; // value is now 7
+        int value = 5;      // normal integer
+        int &ref = value;   // reference to variable value
+        value = 6;          // value is now 6
+        ref = 7;            // value is now 7
 
-        std::cout << value << "\n"; // prints 7
-        std::cout << ref << "\n"; // prints 7
+        std::cout << value << "\n";     // prints 7
+        std::cout << ref << "\n";       // prints 7
         ++ref;
-        std::cout << value << "\n"; // prints 8
-        std::cout << ref << "\n"; // prints 8
+        std::cout << value << "\n";     // prints 8
+        std::cout << ref << "\n";       // prints 8
 
-        std::cout << &value << "\n"; // prints 0012FF7C
-        std::cout << &ref << "\n"; // prints 0012FF7C
+        std::cout << &value << "\n";    // prints 0012FF7C
+        std::cout << &ref << "\n";      // prints 0012FF7C
     }
     {
         const int x = 5;
@@ -47,17 +47,17 @@ int main()
         int value2 = 6;
         int &ref = value1; // okay, ref is now an alias for value1
 
-        std::cout << value1 << "\n";
-        std::cout << value2 << "\n";
-        std::cout << ref << "\n";
+        std::cout << value1 << "\n";    // print 5
+        std::cout << value2 << "\n";    // print 6
+        std::cout << ref << "\n";       // print 5
 
         ref = value2;   // assigns 6 (the value of value2) to value1 -- does NOT change the reference!
                         // ref还是value1的alias，不是value2的alias
                         // 对ref的理解就是：ref就是value1(初始化的时候是value1).后面遇到的ref都可以用value1来替代
 
-        std::cout << "value1 = " << value1 << "\n";
-        std::cout << "value2 = " << value2 << "\n";
-        std::cout << "ref = " << ref << "\n";
+        std::cout << "value1 = " << value1 << "\n";     // print value1 = 6
+        std::cout << "value2 = " << value2 << "\n";     // print value2 = 6
+        std::cout << "ref = " << ref << "\n";           // print ref = 6
 
         //----------------------------------------------
 
@@ -65,16 +65,16 @@ int main()
         int temp2 = 8;
         int* ptr_temp1 = &temp1;
 
-        std::cout << temp1 << "\n";
-        std::cout << temp2 << "\n";
-        std::cout << *ptr_temp1 << "\n";
+        std::cout << temp1 << "\n";         // print 9
+        std::cout << temp2 << "\n";         // print 8
+        std::cout << *ptr_temp1 << "\n";    // print 9
 
         //ptr_temp1 = &temp2;
         *ptr_temp1 = temp2;
 
-        std::cout << "temp1 = " << temp1 << "\n";
-        std::cout << "temp2 = " << temp2 << "\n";
-        std::cout << "*ptr_temp1 = " << *ptr_temp1 << "\n";
+        std::cout << "temp1 = " << temp1 << "\n";               // print temp1 = 8
+        std::cout << "temp2 = " << temp2 << "\n";               // print temp2 = 8
+        std::cout << "*ptr_temp1 = " << *ptr_temp1 << "\n";     // print *ptr_temp1 = 8
     }
 
     // Const references
@@ -92,11 +92,11 @@ int main()
     {
         int n = 5;
 
-        std::cout << n << '\n';
+        std::cout << n << '\n';     // print 5
 
         changeN(n); // note that this is a non-reference argument
 
-        std::cout << n << '\n';
+        std::cout << n << '\n';     // print 6
     }
 
     // References as shortcuts

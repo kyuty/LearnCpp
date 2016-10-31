@@ -10,7 +10,7 @@ void printArray(const int *array, int length)
     std::cout << std::endl;
 }
 
-void setToNull(int *tempPtr)
+void setToNull(int *tempPtr)        // tempPtr是一份拷贝(copy)
 {
     // we're making tempPtr point at something else, not changing the value that tempPtr points to.
     tempPtr = nullptr; // use 0 instead if not C++11
@@ -22,7 +22,7 @@ void setToSix(int *tempPtr)
 }
 
 // tempPtr is now a reference to a pointer, so any changes made to tempPtr will change the argument as well!
-void setToNull_1(int *&tempPtr)
+void setToNull_1(int *&tempPtr)     // tempPtr是个引用
 {
     tempPtr = nullptr; // use 0 instead if not C++11
 }
@@ -32,7 +32,8 @@ int main()
 {
     {
         int array[6] = { 6, 5, 4, 3, 2, 1 }; // remember, arrays decay into pointers
-        printArray(array, 6); // so array evaluates to a pointer to the first element of the array here, no & needed
+        printArray(array, 6);   // so array evaluates to a pointer to the first element of the array here, no & needed
+                                // print 6 5 4 3 2 1 
     }
 
     // Addresses are passed by value
@@ -42,7 +43,7 @@ int main()
         int *ptr = &five;
 
         // This will print 5
-        std::cout << *ptr << "\n";
+        std::cout << *ptr << "\n";  // print 5
 
         // tempPtr will receive a copy of ptr
         setToNull(ptr);
@@ -51,7 +52,7 @@ int main()
 
         // This will print 5
         if (ptr)
-            std::cout << *ptr << "\n";
+            std::cout << *ptr << "\n";  // print 5
         else
             std::cout << " ptr is null" << "\n";
     }
@@ -61,7 +62,7 @@ int main()
         int *ptr = &five;
 
         // This will print 5
-        std::cout << *ptr << "\n";
+        std::cout << *ptr << "\n";  // print 5
 
         // tempPtr will receive a copy of ptr
         setToSix(ptr);
@@ -70,7 +71,7 @@ int main()
 
         // This will print 6
         if (ptr)
-            std::cout << *ptr << "\n";
+            std::cout << *ptr << "\n";  // print 6
         else
             std::cout << " ptr is null" << "\n";
 
@@ -83,7 +84,7 @@ int main()
         int *ptr = &five;
 
         // This will print 5
-        std::cout << *ptr << "\n";
+        std::cout << *ptr << "\n";  // print 5
 
         // tempPtr is set as a reference to ptr
         setToNull_1(ptr);
@@ -93,7 +94,7 @@ int main()
         if (ptr)
             std::cout << *ptr << "\n";
         else
-            std::cout << "ptr is null" << "\n";
+            std::cout << "ptr is null" << "\n";     // print it
     }
     return 0;
 }

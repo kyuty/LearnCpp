@@ -10,9 +10,11 @@ int main()
 
         int *ptr = &value;
         std::cout << *ptr << "\n"; // dereference pointer to int to get int value
+                                    // print 5
 
         int **ptrptr = &ptr;
         std::cout << **ptrptr << "\n"; // first dereference to get pointer to int, second dereference to get int value
+                                    // print 5
     }
     {
         int value = 5;

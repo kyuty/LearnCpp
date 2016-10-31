@@ -4,7 +4,7 @@ enum Type
 {
     INT,
     FLOAT,
-    CSTRING,
+    CSTRING
 };
 
 void printValue(void *ptr, Type type)

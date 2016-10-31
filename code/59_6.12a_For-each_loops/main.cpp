@@ -32,7 +32,7 @@ int main()
     // For-each loops and references
     {
         int array_0[5] = { 9, 7, 5, 3, 1 };
-        for (auto element: array_0) // element will be a copy of the current array element
+        for (auto element : array_0) // element will be a copy of the current array element
             std::cout << element << ' ';
         std::cout << std::endl;
 
@@ -79,7 +79,7 @@ int main()
             }
         }
         if (found)
-            std::cout << username << " was found.\n";
+            std::cout << username << " was found.\n";       // print Holly was found.
         else
             std::cout << username << " was not found.\n";
 

@@ -21,9 +21,9 @@ int main()
     {
         int value = 5;
 
-        std::cout << "value = " << value << '\n';
+        std::cout << "value = " << value << '\n';   // print value = 5
         foo(value);
-        std::cout << "value = " << value << '\n';
+        std::cout << "value = " << value << '\n';   // print value = 6
     }
 
     // Returning multiple values via out parameters
@@ -34,8 +34,8 @@ int main()
         // getSinCos will return the sin and cos in variables sin and cos
         getSinCos(30.0, sin, cos);
 
-        std::cout << "The sin is " << sin << '\n';
-        std::cout << "The cos is " << cos << '\n';
+        std::cout << "The sin is " << sin << '\n';  // print The sin is 0.5
+        std::cout << "The cos is " << cos << '\n';  // print The cos is 0.866025
     }
     return 0;
 }

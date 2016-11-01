@@ -10,7 +10,7 @@ void printArray(const int *array, int length)
     std::cout << std::endl;
 }
 
-void setToNull(int *tempPtr)        // tempPtr是一份拷贝(copy)
+void setToNull(int *tempPtr)        // tempPtr是一份指针（pointer）。是一份拷贝(copy)。拷贝了一个指针
 {
     // we're making tempPtr point at something else, not changing the value that tempPtr points to.
     tempPtr = nullptr; // use 0 instead if not C++11
@@ -22,7 +22,7 @@ void setToSix(int *tempPtr)
 }
 
 // tempPtr is now a reference to a pointer, so any changes made to tempPtr will change the argument as well!
-void setToNull_1(int *&tempPtr)     // tempPtr是个引用
+void setToNull_1(int *&tempPtr)     // tempPtr是个引用（ref）。 引用了一个指针。
 {
     tempPtr = nullptr; // use 0 instead if not C++11
 }

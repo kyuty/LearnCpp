@@ -9,6 +9,7 @@ static int g_x_1(1); // g_x_1 is static, and can only be used within this file
 extern double g_y_1(9.8);   // g_y_1 is external, and can be used by other files
                             // 若没有其他文件,或其他文件没有定义g_y_1变量,那么这里必须写extern double g_y_1(9.8);
                             // 否则,这里可以写成extern double g_y_1;
+                            // 换句话说，extern的变量，必须有定义。
                             // extern double g_y_1(9.8);--->这是定义
                             // extern double g_y_1;--->这是声明;extern意思是在该文件里打开一扇窗,可以找到外部文件中的g_y_1变量
 

@@ -10,6 +10,14 @@ int main()
     {
         char ch(5); // initialize with integer 5
         char ch1('5'); // initialize with code point for '5' (53)
+
+        std::cout << "ch(5) =[" << ch << "]\n";
+        std::cout << "ch1('5') =[" << ch1 << "]\n";
+
+        /*
+            ch(5) =[]
+            ch1('5') =[5]
+        */
     }
 
     {
@@ -69,8 +77,8 @@ int main()
         std::cout << ch << " has ASCII code1 " << static_cast<int>(ch) << std::endl;
 
         /*
-            Input a keyboard character: c has ASCII code 99
-            l has ASCII code 108
+            Input a keyboard character: a has ASCII code 97
+            b has ASCII code 98
         */
     }
     // Inputting chars == end
@@ -78,7 +86,7 @@ int main()
     // Escape sequences === first
     {
         std::cout << "First part\tSecond part\n";
-        
+
         /*
             First part  Second part
         */

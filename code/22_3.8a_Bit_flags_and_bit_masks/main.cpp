@@ -17,14 +17,20 @@ int main()
     {
         std::bitset<8> bits(0x2);   // we need 8 bits, start with bit pattern 0000 0010
         bits.set(option_5);         // set bit 4 to 1 (now we have 0001 0010)
+        std::cout << bits << "\n";
         bits.flip(option_6);        // flip bit 5 (now we have 0011 0010)
+        std::cout << bits << "\n";
         bits.reset(option_6);       // set bit 5 back to 0 (now we have 0001 0010)
+        std::cout << bits << "\n";
 
         std::cout << "Bit 4 has value: " << bits.test(option_5) << '\n';
         std::cout << "Bit 5 has value: " << bits.test(option_6) << '\n';
         std::cout << "All the bits: " << bits << '\n';
 
         /*
+            00010010
+            00110010
+            00010010
             Bit 4 has value: 1
             Bit 5 has value: 0
             All the bits: 00010010
@@ -54,11 +60,12 @@ int main()
 
     // An RGBA color example === first
     {
-        const unsigned int redBits = 0xFF000000;    // 后面6个0; 6 * 4 = 24bit (1位对应4位 : F-->1111)
-        const unsigned int greenBits = 0x00FF0000;  // 后面4个0; 4 * 4 = 24bit
-        const unsigned int blueBits = 0x0000FF00;   // 后面2个0; 2 * 4 = 24bit
+        const unsigned int redBits = 0xFF000000;    // 后面6个0; (1位对应4位 : F-->1111) 4*8
+        const unsigned int greenBits = 0x00FF0000;  // 后面4个0; 
+        const unsigned int blueBits = 0x0000FF00;   // 后面2个0; 
         const unsigned int alphaBits = 0x000000FF;
 
+        std::cout << "unsigned int size's = " << sizeof(redBits) << "\n";
         std::cout << "Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): ";
         unsigned int pixel;
         std::cin >> std::hex >> pixel; // std::hex allows us to read in a hex value
@@ -133,7 +140,6 @@ Summary
     To toggle bit states, we use bitwise XOR:
         myflags ^= option4; // flip option4 from on to off, or vice versa
         myflags ^= option4 | option5; // flip options 4 and 5
-
 */
 
 /*

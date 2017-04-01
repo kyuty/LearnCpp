@@ -7,6 +7,7 @@ int main()
     {
         const double gravity { 9.8 }; // preferred use of const before type
         int const sidesInSquare { 4 }; // okay, but not preferred
+        //const int a;// is wrong
     }
 
     {

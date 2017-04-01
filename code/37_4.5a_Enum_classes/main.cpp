@@ -19,7 +19,7 @@ int main()
         Fruit fruit = BANANA; // Fruit and BANANA can be accessed in the same scope (no prefix needed)
 
         if (color == fruit) // The compiler will compare a and b as integers
-            std::cout << "color and fruit are equal\n"; // and find they are equal!
+            std::cout << "color and fruit are equal\n"; // and find they are equal! // print it
         else
             std::cout << "color and fruit are not equal\n";
     }
@@ -56,7 +56,7 @@ int main()
         Color color = Color::RED;
 
         if (color == Color::RED) // this is okay
-            std::cout << "The color is red!\n";
+            std::cout << "The color is red!\n"; // print it
         else if (color == Color::BLUE)
             std::cout << "The color is blue!\n";
 

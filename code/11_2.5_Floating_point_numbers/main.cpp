@@ -9,7 +9,7 @@ int main()
         float f;
         f = 9.87654321f;
         cout << f << endl;
-        f = 987.654321f;        // 只打印6位数
+        f = 987.654321f;        // 小数点前后加起来，只打印6位数
         cout << f << endl;
         f = 987654.321f;
         cout << f << endl;
@@ -38,19 +38,39 @@ int main()
             3.333333253860474
             3.333333333333333
         */
+
+//Because we set the precision to 16 digits, each of the above numbers is printed with 16 digits. 
+//But, as you can see, the numbers certainly aren’t precise to 16 digits!
+//
+//The number of digits of precision a floating point variable has depends on 
+// both the size (floats have less precision than doubles) 
+// and the particular value being stored (some values have more precision than others).
+// 
+//Float values have between 6 and 9 digits of precision, 
+// with most float values having at least 7 significant digits 
+// (which is why everything after that many digits in our answer above is junk). 
+//
+//Double values have between 15 and 18 digits of precision, 
+// with most double values having at least 16 significant digits. 
+//
+//Long double has a minimum precision of 15, 18, or 33 significant digits 
+// depending on how many bytes it occupies.
+
     }
 
     {
         float f(123456789.0f); // f has 9 significant digits
+        std::cout << f << std::endl;
         std::cout << std::setprecision(9); // because we want to show all 9 significant digits in f
         std::cout << f << std::endl;
 
         /*
             123456792
+            123456792
         */
     }
 
-    // Rounding errors
+    // Rounding errors === begin
     {
         double d(0.1);
         std::cout << d << std::endl; // use default cout precision of 6
@@ -61,6 +81,16 @@ int main()
             0.1
             0.10000000000000001
         */
+        
+//In binary, 0.1 is represented by the infinite sequence: 0.00011001100110011… 
+//Because of this, when we assign 0.1 to a floating point number, we’ll run into precision problems.
+
+// On the top line, cout prints 0.1, as we expect.
+//
+// On the bottom line, where we have cout show us 17 digits of precision, 
+// we see that d is actually not quite 0.1! 
+// This is because the double had to truncate the approximation due to its limited memory, 
+// which resulted in a number that is not exactly 0.1. This is called a rounding error.
     }
 
     {
@@ -78,6 +108,7 @@ int main()
         */
 
     }
+    // Rounding errors === end
 
     // NaN and Inf
     {
@@ -112,6 +143,7 @@ int main()
 3.333333253860474
 3.333333333333333
 
+123456792
 123456792
 
 0.1

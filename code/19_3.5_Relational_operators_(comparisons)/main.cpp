@@ -23,7 +23,7 @@ bool approximatelyEqual(double a, double b, double epsilon)
         std::cout << "return fabs(a - b) <= fabs(a) * epsilon \n";
     }
     */
-    return fabs(a - b) <= ( (fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * epsilon);
+    return fabs(a - b) <= ((fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * epsilon);
 }
 
 // return true if the difference between a and b is less than absEpsilon, or within relEpsilon percent of the larger of a and b

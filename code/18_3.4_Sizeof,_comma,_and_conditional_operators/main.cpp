@@ -49,6 +49,12 @@ int main()
             0
             21
         */
+
+        // Keep in mind that the ?: operator has a very low precedence.
+        // If doing anything other than assigning the result to a variable, 
+        // the ?: statement needs to be wrapped in parenthesis.
+        //
+        // Rule: Only use the conditional operator for simple conditionals where it enhances readability.
     }
     // conditional operators === end
 

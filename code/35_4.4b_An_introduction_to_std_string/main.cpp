@@ -62,15 +62,15 @@ int main()
         std::string a("45");
         std::string b("11");
 
-        std::cout << a + b << "\n"; // a and b will be appended, not added
+        std::cout << a + b << "\n"; // a and b will be appended, not added // print 4511
         a += " volts";
-        std::cout << a << "\n";
+        std::cout << a << "\n"; // print 45 volts
     }
 
     // String length
     {
         std::string myName("Alex");
-        std::cout << myName << " has " << myName.length() << " characters\n";
+        std::cout << myName << " has " << myName.length() << " characters\n"; // Alex has 4 characters
     }
 
 /*

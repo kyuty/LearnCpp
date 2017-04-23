@@ -93,6 +93,10 @@ int main()
 
             case 3:
                 //int z = 4; // illegal, you can't initialize new variables in the case statements
+
+                            // However, initialization of variables directly underneath a case label is disallowed and will cause a compile error.
+                            // This is because initializing a variable does require execution,
+                            // and the case statement containing the initialization may not be executed!
                 break;
 
             default:

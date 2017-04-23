@@ -74,6 +74,7 @@ int main()
         };
         int array_3[MAX_ARRAY_SIZE]; // Ok
 
+        /*
         // using a non-const variable
         int size_1;
         std::cin >> size_1;
@@ -83,8 +84,9 @@ int main()
         int temp = 5;
         const int size_2 = temp;
         int array_4[size_2]; // Not ok -- size is a runtime constant, not a compile-time constant!
+        */
 
-        std::cout << "dsfdsaf";
+        std::cout << "dsfdsaf" << std::endl;
     }
     return 0;
 }

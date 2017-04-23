@@ -158,7 +158,7 @@ int main()
     // Indexing an array out of range
     {
         int prime[5]; // hold the first 5 prime numbers
-        prime[5] = 13;
+        //prime[5] = 13;
     }
     return 0;
 }

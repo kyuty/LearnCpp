@@ -6,20 +6,20 @@ int main()
     // C-style strings
     {
         char mystring[] = "string";// 6 + 1 = 7
-        std::cout << mystring << " has " << sizeof(mystring) << " characters.\n";
+        std::cout << mystring << " has " << sizeof(mystring) << " characters.\n";// print "string has 7 characters."
         for (int index = 0; index < sizeof(mystring); ++index){
-            std::cout << static_cast<int>(mystring[index]) << " ";
+            std::cout << static_cast<int>(mystring[index]) << " ";// print "115 116 114 105 110 103 0"
         }
         std::cout << std::endl;
     }
     {
         char mystring[] = "string";
         mystring[1] = 'p';
-        std::cout << mystring << "\n";
+        std::cout << mystring << "\n"; // print spring
     }
     {
         char name[20] = "Alex"; // only use 5 characters (4 letters + null terminator)
-        std::cout << "My name is: " << name << '\n';
+        std::cout << "My name is: " << name << '\n'; // print My name is: Alex
     }
 
     // C-style strings and std::cin

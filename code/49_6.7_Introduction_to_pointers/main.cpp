@@ -58,6 +58,9 @@ int main()
     {
         int x(4);
         std::cout << typeid(&x).name() << "\n";     // print Pi
+        
+        float y(1.0);
+        std::cout << typeid(&y).name() << "\n";     // print Pf
 
         /*
             On Visual Studio 2013, this printed: int *

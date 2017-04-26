@@ -44,6 +44,13 @@ int main()
         char c = 'Q';
         std::cout << &c << "\n";        // print Q // print Q╠╠╠╠╜╡4
 
+        char* d = "Q";
+        std::cout << d << "\n";         // print Q
+                                        // waring : conversion from string literal to 'char *' is deprecated.
+
+        const char *e = "Q";
+        std::cout << e << "\n";         // print Q
+
         /*
             In this case, the programmer is intending to print the address of variable c. 
             However, &c has type char*, so std::cout tries to print this as a string! On the author’s machine, this printed:

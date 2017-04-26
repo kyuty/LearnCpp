@@ -128,8 +128,15 @@ int main()
         int *const ptr = &value;
         int &ref = value;
 
-        *ptr = 5;
-        ref = 5;
+        std::cout << "value = " << value << "\n";
+        std::cout << "*ptr = " << *ptr << "\n";
+        std::cout << "ref = " << ref << "\n";
+
+        *ptr = 125;
+        ref = 125;
+        std::cout << "value = " << value << "\n";
+        std::cout << "*ptr = " << *ptr << "\n";
+        std::cout << "ref = " << ref << "\n";
     }
     return 0;
 }

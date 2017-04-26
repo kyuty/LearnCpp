@@ -15,11 +15,11 @@ int main()
     {
         char mystring[] = "string";
         mystring[1] = 'p';
-        std::cout << mystring << "\n"; // print spring
+        std::cout << mystring << "\n"; // print "spring"
     }
     {
         char name[20] = "Alex"; // only use 5 characters (4 letters + null terminator)
-        std::cout << "My name is: " << name << '\n'; // print My name is: Alex
+        std::cout << "My name is: " << name << '\n'; // print "My name is: Alex"
     }
 
     // C-style strings and std::cin

@@ -28,25 +28,36 @@ int main()
 
     // Dangling pointers
     {
+        std::cout << "dfsafdsfdsafdasf first\n";
+
         int *ptr = new int; // dynamically allocate an integer
         *ptr = 7; // put a value in that memory location
 
         delete ptr; // return the memory to the operating system.  ptr is now a dangling pointer.
 
-        std::cout << *ptr << "\n";  // Dereferencing a dangling pointer will cause undefined behavior        
-                                    // print 0
-        //delete ptr;   // trying to deallocate the memory again will also lead to undefined behavior.        
+        //std::cout << "*ptr = " << *ptr << "\n";  // Dereferencing a dangling pointer will cause undefined behavior
+                                                   // print "Segmentation fault:"
+        //delete ptr;   // trying to deallocate the memory again will also lead to undefined behavior.
                         // *** Error in `./main': double free or corruption (fasttop): 0x0000000000bd0090 ***
                         // Aborted (core dumped)
+
+        std::cout << "dfsafdsfdsafdasf end\n";
     }
     {
-        int *ptr = new int; // dynamically allocate an integer
+        std::cout << "123 first\n";
+
+        int *ptr = new int(5); // dynamically allocate an integer
         int *otherPtr = ptr; // otherPtr is now pointed at that same memory location
 
         delete ptr; // return the memory to the operating system.  ptr and otherPtr are now dangling pointers.
         ptr = 0; // ptr is now a nullptr
 
+        //std::cout << "*ptr = " << *ptr << "\n";           //Segmentation fault
+        //std::cout << "*otherPtr = " << *otherPtr << "\n";
+
         // however, otherPtr is still a dangling pointer!
+
+        std::cout << "123 end\n";
     }
 
 
@@ -73,7 +84,7 @@ int main()
         }
         if (ptr) {
             std::cout << "ptr == true\n";       // print it
-            //delete ptr;   //*** Error in `./main': munmap_chunk(): invalid pointer: 0x00007f4a1aa571f8 *** 
+            //delete ptr;   //*** Error in `./main': munmap_chunk(): invalid pointer: 0x00007f4a1aa571f8 ***
                             //Aborted (core dumped)
         }
     }

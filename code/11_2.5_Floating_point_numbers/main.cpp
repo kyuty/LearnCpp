@@ -81,7 +81,7 @@ int main()
             0.1
             0.10000000000000001
         */
-        
+
 //In binary, 0.1 is represented by the infinite sequence: 0.00011001100110011… 
 //Because of this, when we assign 0.1 to a floating point number, we’ll run into precision problems.
 

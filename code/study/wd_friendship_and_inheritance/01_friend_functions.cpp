@@ -49,6 +49,14 @@ if delete 'friend', will show the error and note below
 01_friend_functions.cpp:6:9: note: implicitly declared private here
     int width, height;
 
+----
+
+this is wrong.
+Rectangle duplicate (friend const Rectangle&);
+
+01_friend_functions.cpp:12:26: error: 'friend' used outside of class
+    Rectangle duplicate (friend const Rectangle&);
+
 */
 /*
 24

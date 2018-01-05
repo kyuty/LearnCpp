@@ -9,6 +9,7 @@ class Rectangle {
     Rectangle (int x, int y) : width(x), height(y) {}
     int area() {return width * height;}
     friend Rectangle duplicate (const Rectangle&);
+    //Rectangle duplicate (const Rectangle&);
 };
 
 Rectangle duplicate (const Rectangle& param)
@@ -30,6 +31,24 @@ int main () {
 In principle, private and protected members of a class cannot be accessed from outside the same class in which they are declared. However, this rule does not apply to "friend".
 
 friend 能访问private和protected变量
+作用于 返回的变量 和 参数的变量
+
+----
+
+if delete 'friend', will show the error and note below
+
+01_friend_functions.cpp:18:7: error: 'width' is a private member of 'Rectangle'
+  res.width = param.width*2;
+      ^
+01_friend_functions.cpp:6:9: note: implicitly declared private here
+    int width, height;
+
+01_friend_functions.cpp:18:21: error: 'width' is a private member of 'Rectangle'
+  res.width = param.width*2;
+                    ^
+01_friend_functions.cpp:6:9: note: implicitly declared private here
+    int width, height;
+
 */
 /*
 24

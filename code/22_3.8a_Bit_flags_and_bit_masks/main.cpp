@@ -13,6 +13,17 @@ const int option_8 = 7;
 
 int main()
 {
+    {
+        unsigned short test = 15360; // 12902
+        std::cout << std::bitset<sizeof(unsigned short) * 8>(test) << std::endl;
+        test = 12902; // 65536 - 1
+        std::cout << std::bitset<sizeof(unsigned short) * 8>(test) << std::endl;
+        unsigned char test2 = 255;
+        std::cout << std::bitset<sizeof(unsigned char) * 8>(test2) << std::endl;
+        float test3 = 0.8f;
+        std::cout << std::bitset<sizeof(float) * 8>(test3) << std::endl;
+
+    }
     // An introduction to std::bitset === first
     {
         std::bitset<8> bits(0x2);   // we need 8 bits, start with bit pattern 0000 0010
@@ -38,60 +49,60 @@ int main()
     }
     // An introduction to std::bitset === end
 
-    // Bit masks === first
-    {
-        const unsigned int lowMask = 0xF; // bit mask to keep low 4 bits (hex for 0000 0000 0000 1111)
+    // // Bit masks === first
+    // {
+    //     const unsigned int lowMask = 0xF; // bit mask to keep low 4 bits (hex for 0000 0000 0000 1111)
 
-        std::cout << "Enter an integer: ";
-        int num;
-        std::cin >> num;
+    //     std::cout << "Enter an integer: ";
+    //     int num;
+    //     std::cin >> num;
 
-        num &= lowMask; // remove the high bits to leave only the low bits
-                        // 十进制的数字 与(&)操作 一个十六进制的数
+    //     num &= lowMask; // remove the high bits to leave only the low bits
+    //                     // 十进制的数字 与(&)操作 一个十六进制的数
 
-        std::cout << "The 4 low bits have value: " << num<< '\n';
+    //     std::cout << "The 4 low bits have value: " << num<< '\n';
 
-        /*
-            Enter an integer: 17
-            The 4 low bits have value: 1
-        */
-    }
-    // Bit masks === end
+    //     /*
+    //         Enter an integer: 17
+    //         The 4 low bits have value: 1
+    //     */
+    // }
+    // // Bit masks === end
 
-    // An RGBA color example === first
-    {
-        const unsigned int redBits = 0xFF000000;    // 后面6个0; (1位对应4位 : F-->1111) 4*8
-        const unsigned int greenBits = 0x00FF0000;  // 后面4个0; 
-        const unsigned int blueBits = 0x0000FF00;   // 后面2个0; 
-        const unsigned int alphaBits = 0x000000FF;
+    // // An RGBA color example === first
+    // {
+    //     const unsigned int redBits = 0xFF000000;    // 后面6个0; (1位对应4位 : F-->1111) 4*8
+    //     const unsigned int greenBits = 0x00FF0000;  // 后面4个0; 
+    //     const unsigned int blueBits = 0x0000FF00;   // 后面2个0; 
+    //     const unsigned int alphaBits = 0x000000FF;
 
-        std::cout << "unsigned int size's = " << sizeof(redBits) << "\n";
-        std::cout << "Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): ";
-        unsigned int pixel;
-        std::cin >> std::hex >> pixel; // std::hex allows us to read in a hex value
+    //     std::cout << "unsigned int size's = " << sizeof(redBits) << "\n";
+    //     std::cout << "Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): ";
+    //     unsigned int pixel;
+    //     std::cin >> std::hex >> pixel; // std::hex allows us to read in a hex value
 
-        // use bitwise AND to isolate red pixels, then right shift the value into the range 0-255
-        unsigned char red = (pixel & redBits) >> 24;
-        unsigned char green = (pixel & greenBits) >> 16;
-        unsigned char blue = (pixel & blueBits) >> 8;
-        unsigned char alpha = pixel & alphaBits;
+    //     // use bitwise AND to isolate red pixels, then right shift the value into the range 0-255
+    //     unsigned char red = (pixel & redBits) >> 24;
+    //     unsigned char green = (pixel & greenBits) >> 16;
+    //     unsigned char blue = (pixel & blueBits) >> 8;
+    //     unsigned char alpha = pixel & alphaBits;
 
-        std::cout << "\nYour color contains:\n";
-        std::cout << static_cast<int>(red) << " of 255 red\n";
-        std::cout << static_cast<int>(green) << " of 255 green\n";
-        std::cout << static_cast<int>(blue) << " of 255 blue\n";
-        std::cout << static_cast<int>(alpha) << " of 255 alpha\n";
+    //     std::cout << "\nYour color contains:\n";
+    //     std::cout << static_cast<int>(red) << " of 255 red\n";
+    //     std::cout << static_cast<int>(green) << " of 255 green\n";
+    //     std::cout << static_cast<int>(blue) << " of 255 blue\n";
+    //     std::cout << static_cast<int>(alpha) << " of 255 alpha\n";
 
-        /*
-            Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): FF7F3300
-            Your color contains:
-            255 of 255 red
-            127 of 255 green
-            51 of 255 blue
-            0 of 255 alpha
-        */
-    }
-    // An RGBA color example === end
+    //     /*
+    //         Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): FF7F3300
+    //         Your color contains:
+    //         255 of 255 red
+    //         127 of 255 green
+    //         51 of 255 blue
+    //         0 of 255 alpha
+    //     */
+    // }
+    // // An RGBA color example === end
 
     return 0;
 }

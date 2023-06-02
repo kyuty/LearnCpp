@@ -68,6 +68,7 @@
         "deque": "cpp",
         "fstream": "cpp",
         "stack": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "__verbose_abort": "cpp"
     }
 }

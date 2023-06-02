@@ -49,17 +49,22 @@ class Son : public Mother {
 };
 
 int main () {
-  Daughter kelly(0);
-  Son bud(0);
+  Daughter kelly(0); // Mother: no parameters 
+                     // Daughter: int parameter
+  Son bud(0);        // Mother: int parameter
+                     // Son: int parameter
 
-  kelly.method();
-  bud.method();
+  kelly.method();    // Daughter: method()
+  bud.method();      // Mother: method()
+                     // Son: method()
+                     // 主动调用父类方法才会调，否则不调父类方法(void)
 
   // 只调用父类
-  kelly.Mother::method();
-  bud.Mother::method();
+  kelly.Mother::method(); // Mother: method()
+  bud.Mother::method();   // Mother: method()
 
-  kelly.call();
+  kelly.call(); // Mother: a()    无 virtual 修饰符
+                // Daughter: b()  有 virtual 修饰符
   return 0;
 }
 /*

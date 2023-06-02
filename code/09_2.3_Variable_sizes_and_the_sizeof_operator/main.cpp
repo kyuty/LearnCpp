@@ -54,6 +54,32 @@ int main()
 
     cout << "x is " << sizeof(x) << " bytes"<< endl;
 
+    {
+        char *str1 = "12345";
+        char *str1_1 = "1\02345";
+        char str2[] = "12345";
+        char str3[8] = {'a', 's', 'd'};
+        char str3_1[8] = {'1', '2', '3', '4', '5', '6', '7', '8'};
+        char str3_2[8] = "1234567";
+        //char str3_2[8] = "12345678"; // build error
+        char str4[]  = "as\0df";
+
+        cout << "char *str1 = \"12345\"; sizeof(str1) = " << sizeof(str1) << endl; // 8
+        cout << "strlen(char*) = " << strlen(str1) << endl; // 5
+        cout << "sizeof(char*) = " << sizeof(str1_1) << endl; // 8
+        cout << "strlen(char*) = " << strlen(str1_1) << endl; // 4
+        cout << "sizeof(char[]) = " << sizeof(str2) << endl; // 6 加上了 /0
+        cout << "strlen(char[]) = " << strlen(str2) << endl; // 5
+        cout << "sizeof(char[8]) = " << sizeof(str3) << endl; // 8
+        cout << "strlen(char[8]) = " << strlen(str3) << endl; // 3
+        cout << "sizeof(char[8]) = " << sizeof(str3_1) << endl; // 8
+        cout << "strlen(char[8]) = " << strlen(str3_1) << endl; // 11
+        cout << "sizeof(char[8]) = " << sizeof(str3_2) << endl; // 8
+        cout << "strlen(char[8]) = " << strlen(str3_2) << endl; // 7
+        cout << "sizeof(char[]) = " << sizeof(str4) << endl; // 6
+        cout << "strlen(char[]) = " << strlen(str4) << endl; // 2
+    }
+
     return 0;
 }
 /*
